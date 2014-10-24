@@ -24,14 +24,21 @@ head
        SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones 
     //
           <link rel="canonical" href="http://www.example.com/">
-          
+      
+      
+    // Icon font for Ionic Framework CDN
+    link('http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css')
+    // Latest compiled and minified CSS  CDN
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')  
     //
        Page styles 
-    link(rel='stylesheet', href='styles/main.css')
+    link(rel='stylesheet', href='styles/main.css')    
   body
     
     block content
     
 
     script(src='scripts/main.js')
+     //Latest compiled and minified JavaScript CDN
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script')
 
