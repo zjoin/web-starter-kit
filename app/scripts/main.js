@@ -49,4 +49,8 @@
   });
 })();
 
-console.log('Hello');
+console.log('Hello, it\'s works');
+var t = $('#hello');
+t.on('click',function() {
+   alert('hello'); 
+});
