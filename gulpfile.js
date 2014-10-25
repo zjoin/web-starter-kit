@@ -36,7 +36,8 @@ gulp.task('jshint', function () {
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')))
+    .pipe(gulp.dest('dist/scripts/'));
 });
 
 // Optimize Images
@@ -116,6 +117,14 @@ gulp.task('serve', ['styles','jade'], function () {
   gulp.watch(['app/images/**/*'], reload);
 });
 
+gulp.task('vendor', function() {
+  return gulp.src([
+      'bower_components/modernizr/modernizr.js',
+      'bower_components/respond/src/respond.js'
+    ])    
+    .pipe( gulp.dest('dist/scripts/vendor/'));
+});
+
 // Build and serve the output from the dist build
 gulp.task('serve:dist', ['default'], function () {
   browserSync({
@@ -131,7 +140,7 @@ gulp.task('serve:dist', ['default'], function () {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['jshint', 'jade', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', ['jshint', 'jade', 'images', 'fonts', 'copy', 'vendor'], cb);
 });
 
 // Run PageSpeed Insights
