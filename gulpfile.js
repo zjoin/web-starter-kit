@@ -87,6 +87,7 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate And Minify Styles
     .pipe($.if('*.css', $.csso()))
+    .pipe($.csscomb())
     .pipe(gulp.dest('dist/styles'))
     .pipe($.size({title: 'styles'}));
 });
