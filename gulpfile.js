@@ -122,7 +122,7 @@ gulp.task('vendor', function() {
   return gulp.src([
       'bower_components/modernizr/modernizr.js',
       'bower_components/respond/src/respond.js'
-    ])    
+    ])   
     .pipe( gulp.dest('dist/scripts/vendor/'));
 });
 
