@@ -87,13 +87,9 @@ gulp.task('styles', function () {
     .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate And Minify Styles
-<<<<<<< HEAD
-    .pipe($.if('*.css', $.csso()))
-    .pipe($.csscomb())
-=======
 //    .pipe($.if('*.css', $.csso()))
   .pipe($.csscomb())
->>>>>>> e485bf46ca31702655e572de0f7577f05a657848
+
     .pipe(gulp.dest('dist/styles'))
     .pipe($.size({title: 'styles'}));
 });
