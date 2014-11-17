@@ -1,1 +1,9 @@
 @import 'components/_normalize';
+@import 'components/_pace-theme-flash';
+
+.pace-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #eee;
+}

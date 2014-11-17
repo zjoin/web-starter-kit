@@ -38,3 +38,6 @@
 })();
 
 
+Pace.on('hide', function() {
+   $('.pace-overlay').fadeOut(); 
+});
