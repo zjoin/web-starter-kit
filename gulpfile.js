@@ -97,7 +97,7 @@ gulp.task('styles', function () {
 
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
 // Watch Files For Changes & Reload
 gulp.task('serve', ['styles','jade'], function () {
